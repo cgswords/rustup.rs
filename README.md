@@ -353,11 +353,17 @@ $ rustup target add i686-pc-windows-gnu # this one's installed by default
 ## Working with custom toolchains
 
 For convenience of developers working on Rust itself, `rustup` can manage
-local builds of the Rust toolchain. To teach `rustup` about your build
-just run:
+local builds of the Rust toolchain. To teach `rustup` about your build, run:
 
 ```
 $ rustup toolchain link my-toolchain path/to/my/toolchain/sysroot
+```
+
+For example, if you have build `rustc` after cloning `rust-lang/rust` to  `~/rust`,
+and the build is for a generic x86-64 system, you would invoke:
+
+```
+$ rustup toolchain link myrust ~/rust/x86_64-unknown-linux-gnu/stage2
 ```
 
 Now you can name `my-toolchain` as any other `rustup`
